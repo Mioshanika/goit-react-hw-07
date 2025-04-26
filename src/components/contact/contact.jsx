@@ -1,5 +1,5 @@
 import s from './contact.module.css';
-import { delContact } from '../../redux/contactsops.js';
+import { delContact } from '../../redux/contactsOps.js';
 import { FaMobileScreenButton } from 'react-icons/fa6';
 import { FaRegFaceSmile } from 'react-icons/fa6';
 import { useDispatch } from 'react-redux';

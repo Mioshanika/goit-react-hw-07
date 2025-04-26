@@ -1,5 +1,5 @@
 import s from './contactform.module.css';
-import { addContact } from '../../redux/contactsops.js';
+import { addContact } from '../../redux/contactsOps.js';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
 import { useId } from 'react';
