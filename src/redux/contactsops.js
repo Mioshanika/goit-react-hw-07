@@ -1,8 +1,9 @@
 import axios from 'axios';
 import { createAsyncThunk } from '@reduxjs/toolkit';
 
+const API = process.env.mockapi_io;
 const axiosConfig = {
-  baseURL: `https://${process.env.mockapi_io}.mockapi.io`,
+  baseURL: `https://${API}.mockapi.io`,
   headers: {
     'content-type': 'application/json',
   },
