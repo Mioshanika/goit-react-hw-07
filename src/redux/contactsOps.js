@@ -7,7 +7,7 @@ const axiosConfig = {
     'content-type': 'application/json',
   },
 };
-export const getContacts = createAsyncThunk('contacts/getAll', async ({ signal }, thunkAPI) => {
+export const fetchContacts = createAsyncThunk('contacts/fetchAll', async ({ signal }, thunkAPI) => {
   axiosConfig.signal = signal;
   try {
     const response = await axios.get('/contacts', axiosConfig);
@@ -24,11 +24,14 @@ export const addContact = createAsyncThunk('contacts/addContact', async ({ data 
     return thunkAPI.rejectWithValue(err.message);
   }
 });
-export const delContact = createAsyncThunk('contacts/deleteContact', async ({ id }, thunkAPI) => {
-  try {
-    const response = await axios.delete(`/contacts/${id}`, axiosConfig);
-    return response.data;
-  } catch (err) {
-    return thunkAPI.rejectWithValue(err.message);
+export const deleteContact = createAsyncThunk(
+  'contacts/deleteContact',
+  async ({ id }, thunkAPI) => {
+    try {
+      const response = await axios.delete(`/contacts/${id}`, axiosConfig);
+      return response.data;
+    } catch (err) {
+      return thunkAPI.rejectWithValue(err.message);
+    }
   }
-});
+);
